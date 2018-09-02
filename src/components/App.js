@@ -1,17 +1,25 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { increment, decrement } from '../actions';
+
+import {	increment, 
+			decrement, 
+			reset0, 
+			increment10, 
+			decrement10, 
+		} from '../actions/count';
 
 class App extends Component {
 	render() {
 		const props = this.props;
-		console.log(this.props);
 
 		return (
 			<Fragment>
 				<div>Counter:{ props.value }</div>
 				<button onClick={ props.increment }>+1</button>
+				<button onClick={ props.increment10 }>+10</button>
+				<button onClick={ props.reset0 }>reset0</button>
 				<button onClick={ props.decrement }>-1</button>
+				<button onClick={ props.decrement10 }>-10</button>
 			</Fragment>
 		)
 	}
@@ -34,7 +42,16 @@ const mapDispatchToProps = (dispatch) => {
 			},
 			decrement: () => {
 				dispatch(decrement());
-			}
+			},
+			reset0: () => {
+				dispatch(reset0());
+			},
+			increment10: () => {
+				dispatch(increment10());
+			},
+			decrement10: () => {
+				dispatch(decrement10());
+			},
 		}
 	)
 }
