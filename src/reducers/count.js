@@ -6,7 +6,7 @@ import { 	INCREMENT,
 		} from '../actions/count';
 
 const initialState = {
-	value: 0
+	value: 0,
 };
 
 export default (state=initialState, action) => {
